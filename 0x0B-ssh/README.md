@@ -21,11 +21,4 @@ Your machine has an SSH configuration file for the local SSH client, let’s con
 
 Requirements:
 - Your SSH client configuration must be configured to use the private key `~/.ssh/school`
-- Your SSH client configuration must be configured to refuse to authenticate using a password
-
-## [100-puppet_ssh_config.pp](./100-puppet_ssh_config.pp)
-Let’s practice using Puppet to make changes to our configuration file. Just as in the previous configuration file task, we’d like you to set up your client SSH configuration file so that you can connect to a server without typing a password.
-
-Requirements:
-- Your SSH client configuration must be configured to use the private key `~/.ssh/school`
-- Your SSH client configuration must be configured to refuse to authenticate using a password
+- Your SSH client configuration must be configured to refuse to authenticate using a password.
