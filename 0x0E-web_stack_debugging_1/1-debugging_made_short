@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Debug the sandbox made shorter
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
