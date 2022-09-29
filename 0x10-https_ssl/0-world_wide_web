@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Check type of record
+# shellcheck disable=SC2086
+
+print_content() {
+	line=$(dig "$2"."$1" | awk '/ANSWER SECTION/{getline; print}')
+	type=$(echo "$line" | awk -F" " '{print $4}')
+	IP=$(echo "$line" | awk -F" " '{print $5}')
+	echo "The subdomain $2 is a $type record and points to $IP"
+}
+
+if [[ $# == 1 ]]; then
+	for sub in 'www' 'lb-01' 'web-01' 'web-02'
+	do
+		print_content "$1" "$sub"
+	done
+else
+	print_content "$1" "$2"
+fi
