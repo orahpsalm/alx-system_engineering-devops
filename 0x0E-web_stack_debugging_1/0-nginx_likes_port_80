@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Debug the sandbox
+pkill -9 nginx
+rm /etc/nginx/sites-enabled/default
+sed -i -e 's/ipv6only=on;/;/g' /etc/nginx/sites-available/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+service nginx restart
